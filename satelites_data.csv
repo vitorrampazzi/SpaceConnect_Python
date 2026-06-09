@@ -1,0 +1,9 @@
+id,nome,agencia,altitude_km,status
+101,Starlink-1522,SpaceX,550,Ativo
+102,Hubble,NASA,535,Ativo
+103,SCD-1,INPE,750,Inativo
+104,GOES-16,NOAA,35786,Ativo
+105,ISS,Nacoes_Unidas,408,Ativo
+106,CBERS-4A,INPE_CNSA,628,Ativo
+107,Iridium-97,Iridium,780,Ativo
+108,Vanguard-1,NASA,654,Lixo_Espacial
