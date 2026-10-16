@@ -1,45 +1,55 @@
-# SpaceConnect: Rastreamento Orbital e Telemetria
+# SpaceConnect
 
-**Global Solution 2026 - 1º Semestre**
+A Python terminal application that simulates satellite monitoring and telemetry to demonstrate data structures and algorithms.
 
-## Integrantes do Grupo
-* Vitor Rampazzi Franco - RM: 562270
-* Daniel Brito - RM: 566236
-* Gustavo Borsato - RM: 564621
+Developed for the **Global Solution 2026 — First Semester** academic project.
 
-## Tema Escolhido
-Rastreamento orbital e comportamento de satélites.
+## Demonstration flow
 
-## Descrição do Projeto e Objetivo da Solução
-O SpaceConnect é uma aplicação backend em Python desenvolvida para simular e gerenciar o monitoramento de satélites em órbita. 
-O objetivo principal é demonstrar o uso prático de Estruturas de Dados e Algoritmos no processamento de sinais de telemetria, manutenção de um catálogo orbital atualizado e controle seguro de comandos enviados aos satélites.
+1. Load satellite records from `satelites_data.csv`.
+2. Build and display a catalog using a singly linked list.
+3. Queue and process sample telemetry packets.
+4. Record commands in a stack and undo the latest command.
+5. Sort satellites by ID with Quick Sort.
+6. Find a satellite in the sorted catalog with binary search.
 
-## Fonte dos Dados Utilizados
-Os dados foram estruturados em um arquivo `satelites_data.csv`, simulando bases de dados de agências espaciais reais (como SpaceX, NASA e INPE) que contêm identificadores, nomes, altitudes e status operacional dos equipamentos.
+Satellite records, telemetry packets, and commands are demonstration data. Pauses between steps make the simulation easier to follow; no live telemetry service is connected.
 
-## Estruturas de Dados Implementadas
-* **Lista Ligada Simples:** Utilizada para manter o Catálogo Orbital principal em memória, permitindo o armazenamento de objetos formatados em nós.
-* **Fila (Queue - FIFO):** Implementada para a simulação do recebimento e processamento sequencial de pacotes de telemetria enviados pelos satélites.
-* **Pilha (Stack - LIFO):** Utilizada como um Histórico de Comandos (Uplink), viabilizando a função "Desfazer" para reverter o último comando crítico enviado por engano.
+## Data structures and algorithms
 
-## Algoritmos Utilizados
-* **Ordenação (Quick Sort):** Responsável por ordenar eficientemente o catálogo bagunçado de satélites com base em seus IDs principais.
-* **Busca (Busca Binária):** Aplicado sobre a lista após a ordenação, permitindo localizar rapidamente satélites no catálogo com complexidade O(log n).
+| Implementation | Role |
+| --- | --- |
+| Singly linked list | Satellite catalog |
+| FIFO queue | Sequential telemetry processing |
+| LIFO stack | Command history and undo |
+| Quick Sort | Ordering satellites by ID |
+| Binary search | Looking up a satellite in the sorted list |
 
-## Tecnologias e Bibliotecas Utilizadas
-* **Linguagem:** Python 3.x
-* **Bibliotecas Embutidas:** `csv` (leitura da base de dados) e `time` (simulação de delay e operações em tempo real).
+## Run locally
 
-## Explicação do Funcionamento
-O sistema inicia carregando o CSV na memória e populando uma Lista Ligada. Em seguida, a aplicação simula o fluxo em tempo real:
-1. Recebe pacotes de sinais na fila e processa-os com tempo de simulação.
-2. Simula o envio manual de comandos para os satélites usando uma Pilha, exibindo a reversão da última ação antes que um desastre ocorra.
-3. Demonstra a organização do código aplicando um Quick Sort na estrutura base e efetuando uma Busca Binária bem-sucedida por um satélite específico.
+**Requirement:** Python 3. The application uses only the standard-library `csv` and `time` modules.
 
-## Instruções de Execução
-1. Certifique-se de ter o Python 3.x instalado na sua máquina.
-2. Clone este repositório.
-3. Garanta que os arquivos `main.py`, `estruturas.py`, `algoritmos.py` e `satelites_data.csv` estejam localizados no mesmo diretório.
-4. Pelo terminal ou prompt de comando, navegue até a pasta do projeto e execute:
-   ```bash
-   python main.py
+```bash
+git clone https://github.com/vitorrampazzi/SpaceConnect_Python.git
+cd SpaceConnect_Python
+python main.py
+```
+
+On Windows, `py main.py` can also be used.
+
+Run the command from the repository root so the program can find the CSV file. No `pip` installation is required.
+
+## Repository structure
+
+| File | Purpose |
+| --- | --- |
+| `main.py` | Data loading and demonstration sequence |
+| `estruturas.py` | Linked list, queue, and stack |
+| `algoritmos.py` | Quick Sort and binary search |
+| `satelites_data.csv` | Demonstration satellite dataset |
+
+## Team
+
+- Vitor Rampazzi Franco — RM: 562270
+- Daniel Brito — RM: 566236
+- Gustavo Borsato — RM: 564621
